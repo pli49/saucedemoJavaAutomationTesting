@@ -8,7 +8,7 @@ import com.saucedemo.model.pages.LoginPage;
 
 public class LoginTest extends BaseTest {
 
-
+/* Testing for different kind of inputs*/
 
     // test for no input
     @Test
