@@ -9,6 +9,11 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class BaseTest {
     protected WebDriver driver;
+    // Setting up login parameters
+    String username = "standard_user";
+    String lockoutUsername = "locked_out_user";
+    String problemUsername = "problem_user";
+    String performanceGlitchUsername = "performance_glitch_user";
     String password = "secret_sauce";
 
     @BeforeEach
@@ -20,8 +25,8 @@ public class BaseTest {
         driver.navigate().to("https://www.saucedemo.com/");
     }
 
-    @AfterEach
-    public void teardown() {
-    driver.close();
-    }
+    // @AfterEach
+    // public void teardown() {
+    //     driver.close();
+    // }
 }

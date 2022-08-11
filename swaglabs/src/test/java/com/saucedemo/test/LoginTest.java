@@ -8,16 +8,12 @@ import com.saucedemo.model.pages.LoginPage;
 
 public class LoginTest extends BaseTest {
 
-    // Setting up login parameters
-    String username = "standard_user";
-    String lockoutUsername = "locked_out_user";
-    String problemUsername = "problem_user";
-    String performanceGlitchUsername = "performance_glitch_user";
+
 
     // test for no input
     @Test
     public void verifyNoInputUserLoginError() {
-        var user = new LoginPage(driver).clickLoginButton().getLoginError();
+        var user = new LoginPage(driver).clickLoginButton(1).getLoginError();
         assertEquals("Epic sadface: Username is required", user);
     }
 
@@ -26,7 +22,7 @@ public class LoginTest extends BaseTest {
     public void verifyNoPasswordLogin() {
         var noPasswordUser = new LoginPage(driver)
                 .setInput(username, "", "user-name", "password")
-                .clickLoginButton().getLoginError();
+                .clickLoginButton(1).getLoginError();
         assertEquals("Epic sadface: Password is required", noPasswordUser);
 
     }
@@ -36,7 +32,7 @@ public class LoginTest extends BaseTest {
     public void verifyLockoutUserLoginError() {
         var user = new LoginPage(driver)
         .setInput(lockoutUsername, password, "user-name", "password")
-        .clickLoginButton()
+        .clickLoginButton(1)
         .getLoginError();
         assertEquals("Epic sadface: Sorry, this user has been locked out.", user);
     }
@@ -46,7 +42,7 @@ public class LoginTest extends BaseTest {
     public void verifyStandardUserLogin() {
         var standardUser = new LoginPage(driver)
                 .setInput(username, password, "user-name", "password")
-                .clickLoginButton();
+                .clickLoginButton(1);
 
         // verify that the url contains word invertory
         assertEquals(true, driver.getCurrentUrl().contains("inventory"));
@@ -66,7 +62,7 @@ public class LoginTest extends BaseTest {
     public void verifyProblemUserLogin() {
         var problemUser = new LoginPage(driver)
                 .setInput(problemUsername, password, "user-name", "password")
-                .clickLoginButton();
+                .clickLoginButton(1);
 
         // verify that the url contains word invertory
         assertEquals(true, driver.getCurrentUrl().contains("inventory"));
@@ -86,7 +82,7 @@ public class LoginTest extends BaseTest {
         public void verifyPerformanceGlitchUserLogin() {
             var performanceGlitchUser = new LoginPage(driver)
                     .setInput(performanceGlitchUsername, password, "user-name", "password")
-                    .clickLoginButton();
+                    .clickLoginButton(1);
     
             // verify that the url contains word invertory
             assertEquals(true, driver.getCurrentUrl().contains("inventory"));

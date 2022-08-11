@@ -13,12 +13,6 @@ public class LoginPage extends BasePage {
         return driver.findElement(By.cssSelector(".error-message-container h3")).getText();
     }
 
-    public LoginPage setInput(String username, String password, String userid, String passwordid) {
-        driver.findElement(By.id(userid)).sendKeys(username);
-        driver.findElement(By.id(passwordid)).sendKeys(password);
-        return this;
-    }
-
     public String getProductHeader() {
         return driver.findElement(By.cssSelector(".header_secondary_container .title")).getText();
     }
