@@ -12,7 +12,8 @@ public class InventoryTest extends BaseTest {
 //for standard user
     @Test
     public void standardInventory() {
-        var standardUser = new InventoryPage(driver).standardUserLogin();
+        new InventoryPage(driver).standardUserLogin();
+        assertEquals(true, driver.getCurrentUrl().contains("inventory"));
         
     }
 
