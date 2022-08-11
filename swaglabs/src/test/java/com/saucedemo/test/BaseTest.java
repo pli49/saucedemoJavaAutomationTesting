@@ -25,8 +25,8 @@ public class BaseTest {
         driver.navigate().to("https://www.saucedemo.com/");
     }
 
-    @AfterEach
-    public void teardown() {
-        driver.close();
-    }
+    // @AfterEach
+    // public void teardown() {
+    //     driver.close();
+    // }
 }

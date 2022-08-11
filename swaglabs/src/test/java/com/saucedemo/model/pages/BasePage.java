@@ -56,5 +56,15 @@ public class BasePage {
         return new CartPage(driver);
     }
 
+    public InventoryPage clickContinueShopping() {
+        driver.findElement(By.id("continue-shopping")).click();
+        return new InventoryPage(driver);
+    }
+
+    public CheckOutStepOnePage clickCheckOut() {
+        driver.findElement(By.id("checkout")).click();
+        return new CheckOutStepOnePage(driver);
+    }
+
 
 }
