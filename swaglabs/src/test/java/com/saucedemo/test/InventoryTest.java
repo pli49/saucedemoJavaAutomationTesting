@@ -10,12 +10,12 @@ public class InventoryTest extends BaseTest {
 
 
 //for standard user
-    @Test
-    public void standardInventory() {
-        new InventoryPage(driver).standardUserLogin();
-        assertEquals(true, driver.getCurrentUrl().contains("inventory"));
+    // @Test
+    // public void standardInventory() {
+    //     new InventoryPage(driver).standardUserLogin();
+    //     assertEquals(true, driver.getCurrentUrl().contains("inventory"));
         
-    }
+    // }
 
     @Test
     public void standardProductDetail() {
@@ -29,7 +29,10 @@ public class InventoryTest extends BaseTest {
 
     @Test
     public void standardAddCart() {
-        var standardUser = new InventoryPage(driver).standardUserLogin().clickAddToCartSourceLabBackpack().cartStatus();
+        var standardUser = new InventoryPage(driver)
+        .standardUserLogin()
+        .clickAddToCartSourceLabBackpack()
+        .cartStatus();
         assertEquals("1", standardUser);
         
     }
