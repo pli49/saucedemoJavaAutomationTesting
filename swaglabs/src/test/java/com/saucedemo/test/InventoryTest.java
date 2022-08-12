@@ -17,8 +17,9 @@ public class InventoryTest extends BaseTest {
         
     // }
 
+    //test can go to inventory-item page, TODO: create inventory-item page
     @Test
-    public void standardProductDetail() {
+    public void verifyStandardProductDetail() {
         var sauceLabsBackpack = new InventoryPage(driver)
         .standardUserLogin()
         .clickSourceLabBackpack();
@@ -27,8 +28,9 @@ public class InventoryTest extends BaseTest {
         assertEquals(true, driver.getCurrentUrl().contains("inventory-item"));
     }
 
+    //standard user can add item to cart
     @Test
-    public void standardAddCart() {
+    public void verifyStandardAddCart() {
         var standardUser = new InventoryPage(driver)
         .standardUserLogin()
         .clickAddToCartSourceLabBackpack()
@@ -37,8 +39,9 @@ public class InventoryTest extends BaseTest {
         
     }
 
+    //standard user can remove item from cart
     @Test
-    public void standardRemoveCart() {
+    public void verifyStandardRemoveCart() {
         var standardUser = new InventoryPage(driver)
         .standardUserLogin()
         .clickAddToCartSourceLabBackpack()
@@ -49,8 +52,9 @@ public class InventoryTest extends BaseTest {
         
     }
 
+    //standard user can go to cart
     @Test
-    public void standardGoToCard() {
+    public void verifyStandardGoToCard() {
         new InventoryPage(driver)
         .standardUserLogin()
         .clickAddToCartSourceLabBackpack()
@@ -59,8 +63,9 @@ public class InventoryTest extends BaseTest {
         
     }
 
+    //standard user can logout from inventory page
     @Test
-    public void standardLogout() {
+    public void verifyStandardLogout() {
         new InventoryPage(driver)
         .standardUserLogin()
         .clickHumbargerIcon()
